@@ -36,3 +36,6 @@ console.log(getUserNames(users));
   'Blackburn Dotson',
   'Sheree Anthony',
 ];
+
+//автопроверка
+const getUserNames = array => array.map(({ name } = array) => name);

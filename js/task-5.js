@@ -3,7 +3,7 @@ import users from './users.js';
 // Отримати користувача(не масив) по email(поле email, він унікальний).
 
 const getUserWithEmail = (users, email) =>
-  users.find(user => user.email === email);
+  users.find(({email}) => email === email);
 
 // const getUserWithEmail = function (users, email) {
 //   return users.find(user => user.email === email);

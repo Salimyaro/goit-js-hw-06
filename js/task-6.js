@@ -3,7 +3,7 @@ import users from './users.js';
 // Отримати масив користувачів, які потрапляють у вікову категорію від min до max років(поле age).
 
 const getUsersWithAge = (users, min, max) =>
-  users.filter(user => user.age > min && user.age < max);
+  users.filter(({age}) => age > min && age < max);
 
 // const getUsersWithAge = function (users, min, max) {
 //   return users.filter(user => user.age > min && user.age < max);

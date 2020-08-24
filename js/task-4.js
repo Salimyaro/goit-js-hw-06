@@ -2,7 +2,7 @@ import users from './users.js';
 
 // Отримати масив тільки неактивних користувачів(поле isActive).
 
-const getInactiveUsers = users => users.filter(user => user.isActive === false);
+const getInactiveUsers = users => users.filter(({ isActive }) => !isActive);
 
 // const getInactiveUsers = function (users) {
 //   return users.filter(user => user.isActive === false);

@@ -16,3 +16,6 @@ const getUsersWithEyeColor = (users, color) =>
 // };
 
 console.log(getUsersWithEyeColor(users, 'blue')); // [об'єкт Moore Hensley, об'єкт Sharlene Bush, об'єкт Carey Barr]
+
+// автопроверка
+const getUsersWithEyeColor = (array, color) => array.filter(({ eyeColor } = array) => eyeColor === color);

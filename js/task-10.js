@@ -17,20 +17,15 @@ import users from './users.js';
 //   return sorted;
 // };
 
-const getSortedUniqueSkills = users => {
-  return (
-    users
-      .map(user => user.skills)
+const getSortedUniqueSkills = users =>
+  [
+    ...users
+      .map(({ skills }) => skills)
       .flat()
-      .reduce((acc, skill) => {
-        if (!acc.includes(skill)) {
-          acc.push(skill);
-        }
-        return acc;
-      }, [])
-      .sort()
-  );
-};
+      .reduce((acc, skill) => acc.add(skill), new Set()),
+  ].sort();
+
+
 // const getSortedUniqueSkills = users => {
 //   return (
 //     users
@@ -63,6 +58,6 @@ const getSortedUniqueSkills = users => {
 //     .sort();
 // };
 
-console.table(users);
+// console.table(users);
 console.table('getSortedUniqueSkills:', getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
